@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Tia's Restaurant</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      
+    <style>
+        
+        html, body{
+            height:100%;
+        }
+      
+        body{
+            padding:0;
+            margin:0;
+            background-color:black;
+        }
+        
+        .paddingTop{
+            height:25px;
+        }
+        
+        #tags{
+            position:absolute;
+            margin-left:70%;
+            opacity:;
+            height:40px;
+            width:170px;
+            float:right;
+            margin-top:30px;
+            padding:5px;
+            color:white;
+            
+            
+        }
+        
+        @media screen
+            and (max-width: 991px){
+                #tags{
+                   display:none;
+                }
+        }
+        
+        
+        
+        #back{
+            height:40px;
+            width:170px;
+            background-color:lightgray;
+            opacity:.5;
+            margin-left:70%;
+            position:absolute;
+            margin-top:30px;
+        }
+        
+        @media screen
+            and (max-width: 991px){
+                #back{
+                    display:none;
+                }
+        }
+        
+        .small{
+            height:80%;
+        }
+        
+        @media screen 
+            and (max-height: 800px){
+                .small{
+                    height:700px;
+                }
+        }
+        
+        @media screen
+            and (min-width: 992px){
+                .small{
+                    display:none;
+                }
+        }
+        
+        .top{
+            height:20px;
+            background-color:#38629E;
+        }
+        
+        @media screen
+            and (min-width:991px){
+                .top{
+                    height:100px;
+                }
+        }
+            
+        
+        .background{   
+            height:87%;
+            width:100%;
+            background:url("images/background.jpg") no-repeat center center;
+            -webkit-background-size:cover;
+            -moz-background-size:cover;
+            -o-background-size:cover;
+            background-size:cover;
+            
+        }
+        
+        @media screen
+            and (max-width:991px){
+                .background{
+                    height:97%;
+                }
+        }
+        
+        .slider{
+            display:none;
+        }
+        
+        .slider{
+            height:26px;
+            width:100%;
+            font-size:24px;
+            overflow:hidden;
+            background-color:#36609C;
+            margin:auto;
+            color:white;
+            
+        }
+        
+        .slider div, .slider p{
+            margin:0;
+            padding:0;
+        }
+        
+        .slider div{
+            animation: slide 15s 3s infinite;
+        }
+        
+        @keyframes slide{
+            0% { margin-top: 0; }
+            20% { margin-top: -36px; }
+            40% { margin-top: -72px; }
+            60% { margin-top: -108px; }
+            80% { margin-top: -144px; }
+            100%{ margin-top: 0; }
+        }
+        
+        .whole{
+            height:80%;       
+        }
+        
+        @media screen
+            and (max-height: 800px){
+                .whole{
+                    height:700px;
+                }
+        }
+        
+        @media screen 
+            and (max-width: 991px){
+                .whole{
+                    display:none;
+                }
+        }
+        
+        #tags p{
+            margin-top:3px;
+            font-size:1.3em;
+            float:left;
+        }
+        
+        #tags img{
+            height:30px;
+            width:35px;
+            float:right;
+            padding:0 5px 0 0;
+            
+        }
+        
+        
+        
+        .header{
+            width:100%;
+            background-color:black;
+            height:100px;
+            float:left;
+        }
+        
+        @media screen
+            and (max-width: 991px){
+                #back{
+                    display:none;
+                }
+        }
+        
+        @media screen
+            and (max-width: 991px){
+                .header{
+                    margin-top:0px;
+                    position:relative;
+                }
+        }
+        
+        .padding{
+            padding:8px;
+        }
+        
+        .lineH{
+            width:100%;
+            height:3px;
+            background-color:red;
+        }
+        
+        .line{
+            width:100%;
+            height:3px;
+            background-color:red;
+        }
+        
+        .container{
+            width:75%;
+            margin: auto;
+            height:61.2px;
+        }
+        
+        @media screen 
+        and (max-width:991px){
+            .container ul{
+                display:none;
+            }
+        }
+        
+        .container ul{
+            list-style: none;
+            padding-left:250px;
+        }
+        
+        .container li{
+            float:left;
+            padding: 20px 15px;
+            color:red;
+            font-weight:bold;
+        }
+        
+        .container li:hover{
+            font-size:1.2em;
+            margin-top:-4px;
+        }
+        
+        .logo{
+            float:left;
+            width:300px;
+            margin-top:-173px;
+            margin-left:-50px;
+        }
+        
+        @media screen
+            and (max-width:400px){
+                .logo{
+                    width:260px;
+                    margin-top:-141px
+                }
+        }
+        
+        
+    
+        .dropbtn{
+            background-color:red;
+            color:yellow;
+            padding:8px;
+            width:40px;
+            border: none;
+            cursor:pointer;
+            margin-top:15px;
+        }
+        
+        .lineButton{
+            height:3px;
+            width:24px;
+            padding: 0 2px;
+            background-color:white;
+        }
+        
+        .linePadding{
+            height:5px;
+        }
+        
+        .content{
+            height:20%;
+            background-color:black;
+            color:white;
+        }
+        
+        @media screen
+            and (max-height: 800px){
+                .content{
+                    height:150px;
+                }
+        }
+        
+        .dropdown{
+            position:relative;
+            display:inline-block;
+            float:right;
+            margin-top:-2.5px;
+        }
+        
+         @media screen 
+        and (min-width:991px){
+            .dropdown{
+                display:none;
+            }
+        }
+        
+        @media screen 
+        and (max-width:500px){
+            .container{
+                width:96%;
+            }
+        }
+        
+        @media screen 
+        and (max-width:400px){
+            .container{
+                width:100%;
+            }
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: yellow;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            font-weight:bold;
+            margin-left:-120px
+        }
+
+        .dropdown-content a {
+            color:red;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            }
+        
+        .dropdown-content a:hover{
+            background-color:gold ;
+        }
+        
+        a{
+            color:red;
+            text-decoration:none; 
+            
+        }
+        
+        .show {
+            display:inline-block
+        }
+        
+        #down{
+            height:500px;
+            background-color:black;
+        }
+        
+        .contentContainer{
+            width:75%;
+            margin-left: auto;
+            margin-right:auto;
+            background-color:black;
+        }
+        
+        .center{
+            text-align:center;
+        }
+        
+        h5{
+            color:white
+        }
+        
+        
+        #directions h4{
+            margin-top:-0px;
+            padding-top:3px;
+        }
+        
+        #directions a{
+            text-decoration:underline;
+        }
+        
+        #tags2{
+            margin:auto;
+            height:50px;
+            width:180px;
+        }
+        
+        #tags2 p{
+            margin-top:3px;
+            font-size:1.3em;
+            float:left;
+        }
+        
+        #tags2 img{
+            height:30px;
+            width:35px;
+            padding:0 5px 0 0;
+            float:right;
+            
+        }
+        
+        @media screen 
+        and (min-width:991px){
+            #tags2{
+                display:none;
+            }
+        }
+        
+        .black{
+            background-color:black;
+        }
+        
+    </style>
+      
+  </head>
+  <body>
+      
+    <div class = "small">
+        
+        <div class = "top"></div>
+      
+        <div class = "header">
+            
+            <div class = "padding"></div>
+      
+            <div class = "lineH"></div>  
+        
+            <div class = "container">
+            
+                <img class = "logo" src = "images/logo2.png" />
+                
+                <div class = "dropdown">
+                     
+                    <button onclick="myFunction()" class="dropbtn">
+                        
+                        <div class = "lineButton"></div>
+                        <div class = "linePadding"></div>
+                        <div class = "lineButton"></div>
+                        <div class = "linePadding"></div>
+                        <div class = "lineButton" ></div>
+                    
+                    </button>
+                
+                    <div id = "myDropdown" class = "dropdown-content">
+                
+                        <a href="#whole">HOME</a>
+                        <a href="menu.html">MENU</a>
+                        <a href="more.html">MORE</a>
+                        <a href="contact.html">CONTACT US</a>
+                
+                    </div>
+                
+                </div>
+                
+            </div>
+            
+            <div class = "line"></div>
+
+            <div class = "padding"></div>
+      
+      </div>
+        
+        <div class = "background"> </div>
+      
+    </div>
+      
+    <div class = "whole">
+        
+        <div class = "top">
+        
+            <div id = "back"></div>
+        
+            <div id = "tags">
+        
+                <p>Follow us:</p>
+                <a href = "http://www.facebook.com/TiasElp/" target = "_blank"><img src = "images/facebook2.png" ></a>
+                <a href = "http://www.yelp.com/biz/tias-mexican-and-seafood-restaurant-el-paso" target = "_blank"><img id = "yelp" src = "images/yelp.png" href =""></a>
+        
+            </div>
+        
+        </div>
+          
+        <div class = "header">
+            
+            <div class = "padding"></div>
+      
+            <div class = "lineH"></div>  
+        
+            <div class = "container">
+            
+                <img class = "logo" src = "images/logo2.png" />
+            
+                <ul>
+                                
+                    <li>HOME</li>
+                    <li><a href = "menu.html" >MENU</a></li>
+                    <li>MORE</li>
+                    <li>CONTACT US</li>
+        
+                </ul>
+                
+            </div>
+            
+            <div class = "line"></div>
+
+            <div class = "padding"></div>
+      
+      </div>
+        
+    <div class = "background"></div>
+           
+   </div>
+    
+  <div class = "content">
+
+      <div class = "black">
+          
+            <div class = "slider center">
+            
+                <div>
+                
+                    <p>Best Mexican and Seafood Restaurant in El Paso</p>
+                    
+                    <p>5/5 Stars in Facebook</p>
+                    
+                    <p>4.6/5 Stars in Google</p>
+                    
+                    <p>4.5/5 Stars in Yelp</p>
+                    
+                    <p>Come Join Us!</p>
+                
+                </div>
+            
+            </div>
+      
+      <div class = "contentContainer" >
+        
+        <div class = "row">
+        
+            <div class = "col-md-4 center">
+            
+                <h2>Hours</h2>
+                <h4>Monday - Saturday<br />11:00 AM - 7:00 PM<br />Sunday Closed</h4>
+            
+            </div>
+            
+            <div class = "col-md-4 center" id = "map">
+            
+                <h2>Location</h2>
+                <h4>6110 N Mesa St # C, El Paso, TX 79912<br /></h4>
+                
+                <div id = "directions" class = "center">
+                
+                    <h4><a id = "direction" href= "https://www.google.com/maps/place/Tia's+Mexican+%26+Seafood+Restaurant/@31.8324177,-106.533311,17z/data=!3m1!4b1!4m5!3m4!1s0x86e757deee331c29:0xb3776a40a55b9a53!8m2!3d31.8324177!4d-106.531117" target = "_blank">Get Directions</a></h4>
+                
+                </div>
+            
+            </div>
+            
+            <div class = "col-md-4 center">
+            
+                <h2>Catering</h2>
+                <p>we do catering, accept reservations and big groups, parties <br />915-845-1665</p>
+            
+            </div>
+        
+        </div>
+          
+        
+        <div id = "tags2" >
+            
+            <br />
+            <br />
+          
+          
+              <p class = "center">Follow us:</p>
+            <a href = "http://www.facebook.com/TiasElp/" target = "_blank"><img src = "images/facebook2.png" ></a>
+            <a href = "http://www.yelp.com/biz/tias-mexican-and-seafood-restaurant-el-paso" target = "_blank"><img id = "yelp" src = "images/yelp.png" href =""></a>
+        
+        </div>
+      
+    </div>
+    
+    </div>
+      
+ </div>
+      
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js">
+      
+      
+    </script>
+      
+      <script>
+          /* When the user clicks on the button, 
+          toggle between hiding and showing the dropdown content */
+        function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+          }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        
+        
+      </script>
+      
+    <script src="https://www.hostingreviews.website/google-maps-authorization.js?id=c09bf7f0-8c77-1058-5314-24706e06fae5&c=google-maps-html&u=1464705803" defer="defer" async="async"></script>
+            
+      
+    </body>
+</html>
