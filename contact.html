@@ -273,7 +273,8 @@
             overflow: auto;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             font-weight:bold;
-            margin-left:-120px
+            margin-left:-120px;
+            margin-top:50px;
         }
 
         .dropdown-content a {
@@ -301,6 +302,13 @@
             text-align:center;
         }
         
+        #img{
+            background:url("images/button.png");
+            background-position: center;
+            height:33px;
+            width:35px;
+            float:right;
+        }
      
         #black{
             background-color:black;
@@ -310,11 +318,40 @@
             color:white;
         }
         
-        
-        #form input, #form textarea{
+        input,textarea{
             color:black;
         }
         
+        #tags2{
+            margin:auto;
+            height:50px;
+            width:180px;
+            color:white;
+            background-color:black;
+            padding:10px;
+        }
+        
+        #tags2 p{
+            margin-top:3px;
+            font-size:1.3em;
+            float:left;
+        }
+        
+        #tags2 img{
+            height:30px;
+            width:35px;
+            padding:0 5px 0 0;
+            float:right;
+            
+        }
+        
+        @media screen 
+        and (min-width:991px){
+            #tags2{
+                display:none;
+            }
+        }
+
         
     </style>
       
@@ -336,16 +373,13 @@
                 <img class = "logo" src = "images/logo4.png" />
                 
                 <div class = "dropdown">
-                     
-                    <button onclick="myFunction()" class="dropbtn">
-                        
-                        <div class = "lineButton"></div>
-                        <div class = "linePadding"></div>
-                        <div class = "lineButton"></div>
-                        <div class = "linePadding"></div>
-                        <div class = "lineButton" ></div>
                     
-                    </button>
+                    <div type = "button" onclick = "myFunction()" class = "dropbtn" id ="img">
+                    
+                        
+                    
+                    </div>
+                    
                 
                     <div id = "myDropdown" class = "dropdown-content">
                 
@@ -401,7 +435,7 @@
                     <li><a href = "index.html">HOME</a></li>
                     <li><a href = "menu.html" >MENU</a></li>
                     <li>MORE</li>
-                    <li>CONTACT US</li>
+                    <li><a href = "contact.html">CONTACT US</a></li>
         
                 </ul>
                 
@@ -419,92 +453,59 @@
         
         <h3 style="text-align:center">Contact Us:</h3>
         <h4 style = "text-align:center">For any questions or concerns please fill out the form below or contact us by email or phone.</h4>
+        <br />
         
-        <form name="contactform" method="post" action="send_form_email.php" id = "form">
- 
-            <table width="450px">
- 
-                <tr>
- 
-                    <td valign="top">
- 
-                        <label for="first_name">Name </label>
- 
-                    </td>
-                    
- 
-                    <td valign="top">
- 
-                        <input  type="text" name="first_name" maxlength="50" size="30">
- 
-                    </td>
- 
-                </tr>
-                
-                
-                <tr>
- 
-                    <td valign="top">
- 
-                        <label for="email">Email Address</label>
- 
-                    </td>
- 
-                    <td valign="top">
- 
-                        <input  type="text" name="email" maxlength="80" size="30">
- 
-                    </td>
- 
-                </tr>
- 
-                    <tr>
- 
-                        <td valign="top">
- 
-                            <label for="telephone">Telephone Number</label>
- 
-                        </td>
- 
-                        <td valign="top">
- 
-                            <input  type="text" name="telephone" maxlength="30" size="30">
- 
-                        </td>
- 
-                    </tr>
- 
-                    <tr>
- 
-                        <td valign="top">
- 
-                            <label for="comments">Comments *</label>
- 
-                        </td>
- 
-                        <td valign="top">
- 
-                            <textarea  name="comments" maxlength="1000" cols="32" rows="6" ></textarea>
- 
-                        </td>
- 
-                    </tr>
- 
-                    <tr>
- 
-                        <td colspan="2" style="text-align:center">
- 
-                            <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php"></a>
- 
-                        </td>
- 
-                    </tr>
- 
-            </table>
- 
+        <form action="https://formspree.io/tiasrestaurant@att.net"
+      method="POST" target = "_blank" class ="center">
+            
+            <h5>Name</h5>
+            <input type="text" name="name">
+            <br />
+            
+            <h5>Email Adress</h5>
+            <input type="email" name="_replyto">
+            <br />
+            
+            <h5>Questions or Comments</h5>
+            <textarea rows="3" cols="22" name="comments"></textarea>
+            <br />
+            
+            <br/>
+            <input  type="submit" onclick = "formsubmit()" value="Send">
+            
+            <input type="hidden" name="_next" value="tiasmexicanrestaurant.com/contactSuccess.html" />
+            
         </form>
+        
+        <div class = "center">
+        
+            <br/>
+            <br />
+            <h4>Email: Tiasrestaurant@att.net</h4>
+            <h4>Phone Number: 915-845-1665</h4>
+            
+        </div>
+        
+        
+    <div id = "back2"></div>
     
     </div>
+      
+      <br />
+      <br />
+    
+      
+    <div id = "tags2">
+        
+            <p class = "center">Follow us:</p>
+            <a href = "http://www.facebook.com/TiasElp/" target = "_blank"><img src = "images/Facebook2.png" ></a>
+            <a href = "http://www.yelp.com/biz/tias-mexican-and-seafood-restaurant-el-paso" target = "_blank"><img id = "yelp" src = "images/yelp.png" href =""></a>
+        
+    </div>
+      
+    <br />
+    <br />
+      
       
       
 
@@ -524,6 +525,7 @@
         document.getElementById("myDropdown").classList.toggle("show");
           }
 
+          
         // Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
