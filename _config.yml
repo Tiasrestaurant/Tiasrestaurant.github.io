@@ -7,7 +7,7 @@ author:
   
 baseurl: /index.html/
 
-gems: 
+gems:
   - jekyll-sitemap
 
 
