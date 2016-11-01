@@ -6,3 +6,7 @@ author:
   email:"iavila1829@gmail.com"
   
 baseurl: /index.html/
+
+gems: = jekyll-sitemap
+
+
