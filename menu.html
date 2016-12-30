@@ -13,7 +13,6 @@
     <style>
         
         html, body{
-            height:100%;
         }
       
         body{
@@ -41,15 +40,6 @@
             
         }
         
-        @media screen
-            and (max-width: 991px){
-                #tags{
-                   display:none;
-                }
-        }
-        
-        
-        
         #back{
             height:40px;
             width:170px;
@@ -60,20 +50,13 @@
             margin-top:30px;
         }
         
-        @media screen
-            and (max-width: 991px){
-                #back{
-                    display:none;
-                }
-        }
-        
-        .small{
-            height:210px
+        #small{
+            height:170px
         }
         
         @media screen
             and (min-width: 992px){
-                .small{
+                #small,#space{
                     display:none;
                 }
         }
@@ -90,15 +73,15 @@
                 }
         }
         
-        .whole{
+        #whole{
             padding:0;
             margin:0;
-            height:280px;
+            height:255px;
         }
         
         @media screen 
             and (max-width: 991px){
-                .whole{
+                #whole{
                     display:none;
                 }
         }
@@ -306,6 +289,32 @@
             text-align:center;
         }
         
+        
+        #bar{
+            height:50px;
+            margin:auto;
+            width:80%;
+            font-size:1.4em
+        }
+        
+        #bar button{
+            float:left;
+            height:50px;
+            width:33.33%;
+            background-color:black;
+            color:white;
+        }
+        #bar button:hover{
+            background-color:gray;
+        }
+        
+        @media screen
+            and (max-width: 991px){
+                #bar{
+                    display:none;
+                }
+        }
+        
         #content{
             width:80%;
             padding:0 20px 20px 20px;
@@ -320,6 +329,7 @@
             margin: 0 auto;
             padding: 2px 20px 20px 20px;
             background-color:black;
+            border:1px solid white;
         }
         
         #specialstitle{
@@ -340,9 +350,12 @@
             width:40px;
             height:35px;
             
-        }
+        } 
         
         #container2{
+            display:none;
+            width:80%;
+            border: black solid 10px;
             margin: 0 auto;
             background-color:white;
             padding: 10px;
@@ -354,6 +367,51 @@
         
         #container2 span{
             color:blue;
+        }
+        
+        #catering{
+            display:none;
+            width:80%;
+            border: black solid 10px;
+            margin: 0 auto;
+            background-color:white;
+            padding:10px;
+        }
+        
+        #orderOnline{
+            display:none;
+            width:80%;
+            border:black solid 10px;
+            margin:0 auto;
+            background-color:white;
+            padding:10px;
+        }
+        
+        #orderOnline button{
+            background-color:green;
+            color:white;
+            font-size:1.1em;
+            height:30px;
+            position:relative;
+            top:-10px;
+        }
+        
+        .buttonbar{
+            width:80%;
+            background-color:black;
+            color:white;
+            height:50px;
+            font-size:1.4em;  
+            margin:0 auto;
+            display:block;
+        }
+        
+        
+        @media screen
+            and (min-width: 991px){
+                #specials2,#order2,#Catering2{
+                    display:none;
+                }
         }
         
         #menu{
@@ -446,7 +504,7 @@
   </head>
   <body>
       
-    <div class = "small">
+    <div id = "small">
         
         <div class = "top"></div>
       
@@ -486,7 +544,7 @@
       
     </div>
       
-    <div class = "whole">
+    <div id = "whole">
         
         <div class = "top">
         
@@ -529,8 +587,85 @@
       </div>
            
    </div>
+            
+      <div id = "bar">
       
+        <button id = "Catering" onclick = "Catering()">Catering</button>
+        <button id = "specials" onclick = "specials()">Specials</button>
+        <button id = "order" onclick = "order()">Pickup & Delivery</button>
       
+      </div>
+      
+      <div id = "space" style = "height:84px;color:white;text-align:center;padding-top:20px;">**we offer military discounts**</div>
+      
+        <button id = "Catering2" class = "buttonbar" onclick = "Catering2()">Catering</button>  
+      
+        <div id = "catering" class = "center" >
+      
+            <p>We cater for all events.<br /><a href = "tel:+19158451665">Call</a> or <a id = "direction" href= "https://www.google.com/maps/place/Tia's+Mexican+%26+Seafood+Restaurant/@31.8324177,-106.533311,17z/data=!3m1!4b1!4m5!3m4!1s0x86e757deee331c29:0xb3776a40a55b9a53!8m2!3d31.8324177!4d-106.531117" target = "_blank">visit</a> for our special pricing.</p>
+        
+        </div>
+      
+        <button id = "specials2" class = "buttonbar" onclick = "specials2()">Specials</button>
+          
+          <div id = "container2">
+          
+            <div class = "row">
+                
+                <h3 class = "center">Monday - Friday from 11:00 AM - 3:00 PM for just $6.50</h3>
+              
+                <div class = "col-md-6 center">
+                    
+                                
+                    <h2 >Mexican</h2>
+                    
+                    <p>Served with Mexican rice & beans. Includes iced tea & soup of the day.</p>
+                    
+                    <h3><span>Monday</span> - Flauta Plate</h3>
+                    
+                    <h3><span>Tuesday</span> - Chile Rellenos ( a la Espanola, red or green)</h3>
+                    
+                    <h3><span>Wednesday</span> - Enchiladas (red or green)</h3>
+                    
+                    <h3><span>Thursday</span> - Taco Plate</h3>
+                    
+                    <h3><span>Friday</span> - Milanesa</h3>
+                
+                </div>  
+                
+                <div class = "col-md-6 center">
+                
+                    <h2>Seafood</h2>
+                    
+                    <p>Served with white rice & vegetables. Includes iced tea & soup of the day.</p>
+                    
+                    <h3><span>Monday</span> - Fish Tacos</h3>
+                    
+                    <h3><span>Tuesday</span> - Filete Chipotle</h3>
+                    
+                    <h3><span>Wednesday</span> - Filete Veracruzana</h3>
+                
+                    <h3><span>Thursday</span> - Filete a la Mexicana</h3>
+                    
+                    <h3><span>Friday</span> - Filete California</h3>
+                    
+                </div>
+              
+            </div>
+              
+            <p style = "text-align:center">*Lunch special use half portions of fillet. Extra charge applies for substitution.</p>
+              
+          </div>
+      
+      <button id = "order2" class = "buttonbar" onclick = "order2()">Pickup & Delivery</button>
+      
+        <div id = "orderOnline" class = "center">
+      
+            <p>Call and Pick Up some of the best food in El Paso, or get it delivered straight to your door.<br/><br/> Takeout: 915-845-1665</p>
+            <br/>
+            <a href = "www.grubhub.com/restaurant/tias-mexican-seafood-6110-n-mesa-st-el-paso/330236" target = "_blank"><button>Delivery</button></a>
+        
+        </div>
       
       <br />
       <br />
@@ -575,6 +710,8 @@
                                 <li class = "topbar"><a href = "#whole">Whole Fish</a></li>
                                 <li class = "topbar"><a href = "#sides">Sides</a></li>
                                 <li class = "topbar"><a href = "#extras">Extras</a></li>
+                                <li class = "topbar"><a href = "#deserts">Deserts</a></li>
+                                <li class = "topbar"><a href = "#beverages">Beverages</a></li>
                             
                             </ul>
                         
@@ -980,6 +1117,97 @@
                 
                 <div class = "row">
                 
+                    <h2 id = "deserts">Deserts</h2>
+                    
+                    <h3 class = "center" style = 'float:none;text-align:center;color:black'>$3.99</h3>
+                    
+                    <h3 style = "text-align:center">Flan * Chocolate Cake * Pastel de Tres Leches * Sugar Free Jello</h3>
+                    
+                    <p style = "text-align:center">**Subject to availability**</p>
+                
+                </div>
+                
+                <div class = "row">
+                
+                    <h2 id = "beverages">Beverages</h2>
+                    
+                    <h3 style = "color:black;text-align:center">$1.99</h3>
+                    
+                    <h4 style = "color:black;text-align:center">Free Refills</h4>
+                    
+                    <div class = "col-md-6">
+                        
+                        <div class = "col-md-12">
+                    
+                            <h3>Limonada Fresca</h3>
+                        
+                            <h3>Agua de Jamaica</h3>
+                        
+                            <h3>Horchata</h3>
+                        
+                            <h3>Agua de Nuez (Pecan)</h3>
+                        
+                            <h3>Agua de Piña</h3>
+                        
+                            <h3>Agua de Melon</h3>
+                    
+                        </div>    
+                            
+                    </div>
+                    
+                    <div class = "col-md-6 center">
+                        
+                        <div class = "col-md-12">
+                    
+                            <h3>Sweet Tea</h3>
+                        
+                            <h3>Ice Tea</h3>
+                        
+                            <h3>Hot Tea</h3>
+                        
+                            <h3>Cofee</h3>
+                    
+                        </div>    
+                            
+                    </div>
+                    
+                
+                </div>
+                
+                <div class = "row">
+                
+                    <h4 style = "color:black;text-align:center">No Free Refills</h4>
+                    
+                    <div class = "col-md-6">
+                    
+                        <div class = "col-md-12">
+                        
+                            <h3>Coke</h3>
+                            
+                            <h3>Diet Coke</h3>
+                            
+                            <h3>Sprite</h3>
+                        
+                        </div>
+                    
+                    </div>
+                    
+                    <div class = "col-md-6">
+                    
+                        <div class = "col-md-12">
+                        
+                            <h3>Dr. Pepper</h3>
+                            
+                            <h3>Root Beer</h3>
+                        
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+                
+                <div class = "row">
+                
                     <div class = "col-md-12 center">
                     
                         <div class = "col-md-12 center">
@@ -1010,6 +1238,92 @@
     </script>
       
       <script>
+          var but1 = document.getElementById('Catering');
+          var but2 = document.getElementById('specials');
+          var but3 = document.getElementById('order');
+          var but4 = document.getElementById('Catering2');
+          var but5 = document.getElementById('specials2');
+          var but6 = document.getElementById('order2');
+          var div1 = document.getElementById('catering');
+          var div2 = document.getElementById('container2');
+          var div3 = document.getElementById('orderOnline');
+          
+          function Catering(){
+              if(div1.style.display == 'none' || div1.style.display == ''){
+                  div1.style.display = 'block';
+                  but1.style.backgroundColor = 'gray';
+                  div2.style.display = 'none';
+                  but2.style.backgroundColor = 'black';
+                  div3.style.display = 'none';
+                  but3.style.backgroundColor = 'black';
+              }
+              else{
+                div1.style.display = 'none';
+                but1.style.backgroundColor = 'black';
+              }
+          };
+          
+          function specials() {
+            if (div2.style.display == 'none' || div2.style.display == '') {
+                    div2.style.display = 'block';
+                    but2.style.backgroundColor = 'gray';
+                    div3.style.display = 'none';
+                    but3.style.backgroundColor = 'black';
+                    div1.style.display = 'none';
+                    but1.style.backgroundColor = 'black';
+            }
+            else {
+                div2.style.display = 'none';
+                but2.style.backgroundColor = 'black';
+            }
+          };
+          
+          function order(){
+              if (div3.style.display == 'none' || div3.style.display == ''){
+                  div3.style.display = 'block';
+                  but3.style.backgroundColor = 'gray';
+                  div1.style.display = 'none';
+                  but1.style.backgroundColor = 'black';
+                  div2.style.display = 'none';
+                  but2.style.backgroundColor = 'black';
+              }
+              else {
+                  div3.style.display = 'none';
+                  but3.style.backgroundColor = 'black';
+              }
+          };
+          
+          function Catering2(){
+              if(div1.style.display == 'none' || div1.style.display == ''){
+                  div1.style.display = 'block';
+              }
+              else{
+                div1.style.display = 'none';
+              }
+          };
+          
+          function specials2() {
+            if (div2.style.display == 'none' || div2.style.display == '') {
+                    div2.style.display = 'block';
+            }
+            else {
+                div2.style.display = 'none';
+            }
+          };
+          
+          function order2(){
+              if (div3.style.display == 'none' || div3.style.display == ''){
+                  div3.style.display = 'block';
+              }
+              else {
+                  div3.style.display = 'none';
+              }
+          };
+          
+          
+          
+          
+          
           /* When the user clicks on the button, 
           toggle between hiding and showing the dropdown content */
         function myFunction() {
